@@ -1,0 +1,49 @@
+from random import random
+# заполнение матрицы
+N = int(input())
+matrix = []
+for i in range(N):
+    row = []
+    for j in range(N):
+        row.append(int(random()*(50-150)+50))
+    matrix.append(row)
+# вывод матрицы на экран
+for row in matrix:
+    print(row)
+# сумма элементов главной диагонали
+sum_main = 0
+# сумма элементов побочной диагонали
+sum_secondary = 0
+# Количество итераций цикла соответствует
+# размерности квадратной матрицы.
+mas = []
+sam = []
+for i in range(N):
+    # У элементов главной диагонали
+    # совпадают оба индекса.
+    # Из матрицы извлекается элемент
+    # и добавляется к сумме.
+    sum_main += matrix[i][i]
+    mas.append(matrix[i][i])
+    # У элементов побочной диагонали
+    # второй индекс
+    # отсчитывается с конца.
+    sum_secondary += matrix[i][N - i - 1]
+    sam.append(matrix[i][N - i - 1])
+# вывод сумм
+print(sum_main)
+print(sum_secondary)
+k_otr = 0
+k_pol = 0
+for j in sam:
+    if sam < 0:
+        k_otr += 1
+    else:
+        k_pol += 1
+for b in mas: #
+    if mas < 0:
+        k_otr += 1
+    else:
+        k_pol += 1
+print('количество отрицательных:', k_otr)
+print('количество положительных:', k_pol)
