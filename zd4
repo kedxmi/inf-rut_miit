@@ -1,0 +1,37 @@
+import math
+import matplotlib.pyplot as plt  # Импортируем необходимые библиотеки
+y1 = []
+x1 = []
+z1 = []  # Создаём списки для значений y x z
+for x in range(5):  # Перебираем x 
+    y = ((0.6*math.sin(x*math.pi))+(math.sin((8*(x*math.pi)))))
+    z = ((3*math.cos(2*(x*math.pi)))-(math.sin(x)))
+    y1.append(y)
+    z1.append(z)
+    x1.append(x*math.pi)  # Заносим значения в списки 
+plt.plot(x1, y1, color='green', marker='o', markersize=7)  # Создаем график 
+plt.xlabel('Ось х')  # Подпись оси
+plt.ylabel('Ось y')  # Подпись оси
+plt.title('Первый график')  # Подпись графика
+plt.grid(True)  # Деления сзади графика
+plt.show()  # Вывод графика
+# Ну и дальше всё по аналогии
+plt.plot(x1, z1, color='green', marker='o', markersize=7)
+plt.xlabel('Ось x')
+plt.ylabel('Ось z')
+plt.title('Второй график')
+plt.grid(True)
+plt.show()
+plt.plot(x1, z1,
+         x1, y1, color='green', marker='o', markersize=7)
+plt.xlabel('Ось x')
+plt.ylabel('Ось z,y')
+plt.title('Третий график')
+plt.grid(True)
+plt.show()
+plt.plot(z1, y1, color='green', marker='o', markersize=7)
+plt.xlabel('Ось x')
+plt.ylabel('Ось z')
+plt.title('Четвертый график')
+plt.grid(True)
+plt.show()
